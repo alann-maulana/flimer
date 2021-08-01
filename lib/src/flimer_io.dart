@@ -24,7 +24,8 @@ class FlimerIO implements Flimer {
     if (Platform.isAndroid || Platform.isIOS) {
       final ip.ImagePicker picker = ip.ImagePicker();
 
-      return await picker.pickImage(source: ip.ImageSource.values[source.index]);
+      return await picker.pickImage(
+          source: ip.ImageSource.values[source.index]);
     }
 
     // Desktop platforms

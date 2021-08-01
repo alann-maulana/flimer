@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  cross_file: ^0.3.1+4
   image_picker: ^0.8.2
   image_picker_platform_interface: ^2.2.0
   file_selector: ^0.8.2
@@ -22,3 +23,24 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.mesosfer.flimer
+        pluginClass: FlimerPlugin
+      ios:
+        pluginClass: FlimerPlugin
+      web:
+        pluginClass: FlimerHtml
+        fileName: src/flimer_html.dart
+      macos:
+        dartPluginClass: Flimer
+        pluginClass: none
+      windows:
+        dartPluginClass: Flimer
+        pluginClass: none
+      linux:
+        dartPluginClass: Flimer
+        pluginClass: none

@@ -1,15 +1,14 @@
 import 'dart:async';
 
-import 'package:image_picker/image_picker.dart';
+import 'package:cross_file/cross_file.dart';
 
 import 'src/flimer_stub.dart'
     if (dart.library.io) 'src/flimer_io.dart'
     if (dart.library.html) 'src/flimer_html.dart';
+import 'src/image_source.dart';
 
-export 'package:file_selector_platform_interface/file_selector_platform_interface.dart'
-    show XFile;
-export 'package:image_picker_platform_interface/image_picker_platform_interface.dart'
-    show ImageSource;
+export 'package:cross_file/cross_file.dart' show XFile;
+export 'src/image_source.dart' show ImageSource;
 export 'src/flimer_stub.dart'
     if (dart.library.io) 'src/flimer_io.dart'
     if (dart.library.html) 'src/flimer_html.dart';
@@ -19,6 +18,8 @@ final Flimer flimer = Flimer();
 
 /// Flimer stands for Flutter Image Picker.
 abstract class Flimer {
+  static void registerWith() {}
+
   /// Construct flimer using global platform getter.
   factory Flimer() => getFlimer();
 

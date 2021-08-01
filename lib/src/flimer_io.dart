@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:file_selector/file_selector.dart';
 import 'package:flimer/flimer.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:image_picker/image_picker.dart' as ip;
 
 getFlimer() => FlimerIO();
 
@@ -22,9 +22,9 @@ class FlimerIO implements Flimer {
   Future<XFile?> pickImage({ImageSource source = ImageSource.gallery}) async {
     // Mobile platforms
     if (Platform.isAndroid || Platform.isIOS) {
-      final ImagePicker picker = ImagePicker();
+      final ip.ImagePicker picker = ip.ImagePicker();
 
-      return await picker.pickImage(source: source);
+      return await picker.pickImage(source: ip.ImageSource.values[source.index]);
     }
 
     // Desktop platforms
@@ -39,7 +39,7 @@ class FlimerIO implements Flimer {
   Future<List<XFile>?> pickImages() async {
     // Mobile platforms
     if (Platform.isAndroid || Platform.isIOS) {
-      final ImagePicker picker = ImagePicker();
+      final ip.ImagePicker picker = ip.ImagePicker();
 
       return await picker.pickMultiImage();
     }

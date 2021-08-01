@@ -1,5 +1,4 @@
 import 'package:flimer/flimer.dart';
-import 'package:image_picker/image_picker.dart';
 
 getFlimer() => FlimerStub();
 

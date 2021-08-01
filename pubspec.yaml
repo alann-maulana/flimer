@@ -23,3 +23,24 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.mesosfer.flimer
+        pluginClass: FlimerPlugin
+      ios:
+        pluginClass: FlimerPlugin
+      web:
+        pluginClass: FlimerHtml
+        fileName: src/flimer_html.dart
+      macos:
+        dartPluginClass: Flimer
+        pluginClass: none
+      windows:
+        dartPluginClass: Flimer
+        pluginClass: none
+      linux:
+        dartPluginClass: Flimer
+        pluginClass: none

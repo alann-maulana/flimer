@@ -1,9 +1,12 @@
 import 'package:flimer/flimer.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:image_picker/image_picker.dart' as ip;
 
 getFlimer() => FlimerHtml();
 
 class FlimerHtml implements Flimer {
+  static void registerWith(Registrar registrar) {}
+
   final ip.ImagePicker _picker = ip.ImagePicker();
 
   @override

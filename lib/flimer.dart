@@ -18,6 +18,8 @@ final Flimer flimer = Flimer();
 
 /// Flimer stands for Flutter Image Picker.
 abstract class Flimer {
+  static void registerWith() {}
+
   /// Construct flimer using global platform getter.
   factory Flimer() => getFlimer();
 

@@ -6,10 +6,10 @@ import 'package:image_picker/image_picker.dart' show ImageSource, CameraDevice;
 import 'src/flimer_stub.dart'
     if (dart.library.io) 'src/flimer_io.dart'
     if (dart.library.html) 'src/flimer_html.dart';
+import 'src/image_source.dart';
 
 export 'package:cross_file/cross_file.dart' show XFile;
 export 'package:image_picker/image_picker.dart' show ImageSource, CameraDevice;
-
 export 'src/flimer_stub.dart'
     if (dart.library.io) 'src/flimer_io.dart'
     if (dart.library.html) 'src/flimer_html.dart';

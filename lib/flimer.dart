@@ -1,14 +1,15 @@
 import 'dart:async';
 
 import 'package:cross_file/cross_file.dart';
+import 'package:image_picker/image_picker.dart' show ImageSource, CameraDevice;
 
 import 'src/flimer_stub.dart'
     if (dart.library.io) 'src/flimer_io.dart'
     if (dart.library.html) 'src/flimer_html.dart';
-import 'src/image_source.dart';
 
 export 'package:cross_file/cross_file.dart' show XFile;
-export 'src/image_source.dart' show ImageSource;
+export 'package:image_picker/image_picker.dart' show ImageSource, CameraDevice;
+
 export 'src/flimer_stub.dart'
     if (dart.library.io) 'src/flimer_io.dart'
     if (dart.library.html) 'src/flimer_html.dart';
@@ -27,11 +28,21 @@ abstract class Flimer {
   ///
   /// Define the [ImageSource] On Android and iOS platforms. While on Desktop
   /// and Web this will open a dialog image picker
-  Future<XFile?> pickImage({ImageSource source = ImageSource.gallery});
+  Future<XFile?> pickImage({
+    ImageSource source = ImageSource.gallery,
+    double? maxWidth,
+    double? maxHeight,
+    int? imageQuality,
+    CameraDevice preferredCameraDevice = CameraDevice.rear,
+  });
 
   /// Pick multiple images at once.
   ///
   /// Open the image gallery on Android and iOS platforms. While on Desktop
   /// and Web this will open a dialog images picker
-  Future<List<XFile>?> pickImages();
+  Future<List<XFile>?> pickImages({
+    double? maxWidth,
+    double? maxHeight,
+    int? imageQuality,
+  });
 }

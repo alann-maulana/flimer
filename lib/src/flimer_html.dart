@@ -10,12 +10,32 @@ class FlimerHtml implements Flimer {
   final ip.ImagePicker _picker = ip.ImagePicker();
 
   @override
-  Future<XFile?> pickImage({ImageSource source = ImageSource.gallery}) async {
-    return await _picker.pickImage(source: ip.ImageSource.values[source.index]);
+  Future<XFile?> pickImage({
+    ImageSource source = ImageSource.gallery,
+    double? maxWidth,
+    double? maxHeight,
+    int? imageQuality,
+    CameraDevice preferredCameraDevice = CameraDevice.rear,
+  }) async {
+    return await _picker.pickImage(
+      source: source,
+      maxWidth: maxWidth,
+      maxHeight: maxHeight,
+      imageQuality: imageQuality,
+      preferredCameraDevice: preferredCameraDevice,
+    );
   }
 
   @override
-  Future<List<XFile>?> pickImages() async {
-    return await _picker.pickMultiImage();
+  Future<List<XFile>?> pickImages({
+    double? maxWidth,
+    double? maxHeight,
+    int? imageQuality,
+  }) async {
+    return await _picker.pickMultiImage(
+      maxWidth: maxWidth,
+      maxHeight: maxHeight,
+      imageQuality: imageQuality,
+    );
   }
 }

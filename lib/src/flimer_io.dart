@@ -19,12 +19,24 @@ class FlimerIO implements Flimer {
   );
 
   @override
-  Future<XFile?> pickImage({ImageSource source = ImageSource.gallery}) async {
+  Future<XFile?> pickImage({
+    ImageSource source = ImageSource.gallery,
+    double? maxWidth,
+    double? maxHeight,
+    int? imageQuality,
+    CameraDevice preferredCameraDevice = CameraDevice.rear,
+  }) async {
     // Mobile platforms
     if (Platform.isAndroid || Platform.isIOS) {
       final ip.ImagePicker picker = ip.ImagePicker();
 
-      return await picker.pickImage(source: ip.ImageSource.values[source.index]);
+      return await picker.pickImage(
+        source: source,
+        maxWidth: maxWidth,
+        maxHeight: maxHeight,
+        imageQuality: imageQuality,
+        preferredCameraDevice: preferredCameraDevice,
+      );
     }
 
     // Desktop platforms
@@ -36,12 +48,20 @@ class FlimerIO implements Flimer {
   }
 
   @override
-  Future<List<XFile>?> pickImages() async {
+  Future<List<XFile>?> pickImages({
+    double? maxWidth,
+    double? maxHeight,
+    int? imageQuality,
+  }) async {
     // Mobile platforms
     if (Platform.isAndroid || Platform.isIOS) {
       final ip.ImagePicker picker = ip.ImagePicker();
 
-      return await picker.pickMultiImage();
+      return await picker.pickMultiImage(
+        maxWidth: maxWidth,
+        maxHeight: maxHeight,
+        imageQuality: imageQuality,
+      );
     }
 
     // Desktop platforms

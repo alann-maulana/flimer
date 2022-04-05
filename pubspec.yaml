@@ -1,6 +1,6 @@
 name: flimer
 description: Flutter plugin for picking images on Mobile, Desktop and Web.
-version: 1.0.0
+version: 1.0.2
 homepage: https://github.com/eyro-labs/flimer
 
 environment:
@@ -9,6 +9,8 @@ environment:
 
 dependencies:
   flutter:
+    sdk: flutter
+  flutter_web_plugins:
     sdk: flutter
 
   cross_file: ^0.3.1+4

@@ -36,7 +36,7 @@ flutter:
         pluginClass: FlimerPlugin
       web:
         pluginClass: FlimerHtml
-        fileName: src/flimer_html.dart
+        fileName: flimer_html.dart
       macos:
         dartPluginClass: Flimer
         pluginClass: none

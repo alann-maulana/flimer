@@ -3,15 +3,15 @@ import 'dart:async';
 import 'package:cross_file/cross_file.dart';
 import 'package:image_picker/image_picker.dart' show ImageSource, CameraDevice;
 
-import 'src/flimer_stub.dart'
-    if (dart.library.io) 'src/flimer_io.dart'
-    if (dart.library.html) 'src/flimer_html.dart';
+import 'flimer_stub.dart'
+    if (dart.library.io) 'flimer_io.dart'
+    if (dart.library.html) 'flimer_html.dart';
 
 export 'package:cross_file/cross_file.dart' show XFile;
 export 'package:image_picker/image_picker.dart' show ImageSource, CameraDevice;
-export 'src/flimer_stub.dart'
-    if (dart.library.io) 'src/flimer_io.dart'
-    if (dart.library.html) 'src/flimer_html.dart';
+export 'flimer_stub.dart'
+    if (dart.library.io) 'flimer_io.dart'
+    if (dart.library.html) 'flimer_html.dart';
 
 /// Global singleton [Flimer] instance
 final Flimer flimer = Flimer();
